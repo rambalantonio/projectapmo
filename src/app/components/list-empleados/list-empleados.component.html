@@ -1,0 +1,32 @@
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-body">
+      <span class="h3"  *ngIf="empleados.length > 0">LISTA DE PAGER</span>
+      <button type="button" class="btn btn-outline-primary float-right" routerLink="/create-empleado">Agregar Pager</button>
+      <h5 style="margin-top: 0px;" *ngIf="empleados.length == 0"><b>No hay Información en la Base de Datos</b></h5>
+      <table *ngIf="empleados.length > 0" class="table mt-4">
+        <thead class="thead-light">
+          <tr>
+            <th>NOMBRE</th>
+            <th>APELLIDO</th>
+            <th>N° CÉDULA</th>
+            <th>SALARIO</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let empleado of empleados">
+            <td>{{ empleado.nombre }}</td>
+            <td>{{ empleado.apellido }}</td>
+            <td>{{ empleado.documento }}</td>
+            <td>{{ empleado.salario | currency}}</td>
+            <td>
+                <i class="bi bi-pencil-square text-info mr-2" [routerLink]="['/editEmpleado/', empleado.id]" ></i>
+                <i (click)="eliminarEmpleado(empleado.id)" class="bi bi-trash-fill text-danger"></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

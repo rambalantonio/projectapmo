@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "apmo-aee49": {
+      "hosting": {
+        "apmo": [
+          "apmo-aee49"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "apmo-aee49"
+  }
+}

@@ -1,0 +1,199 @@
+<div class="container pt-1">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <div class="card text-center">
+        <div class="card-body">
+          <h3> {{ titulo }}
+            <div *ngIf="loading" class="spinner-grow text-secondary float-right" role="status">
+              <span class="visually-hidden"></span>
+            </div>
+          </h3>
+          <span *ngIf="submitted && createEmpleado.invalid" class="badge badge-danger">TODOS LOS CAMPOS SON OBLIGATORIOS</span>
+          <form class="mt-2" [formGroup]="createEmpleado" (ngSubmit)="agregarEditarEmpleado()">
+
+            <div class="row g-9 mb-3 mt-3">
+              <div class="col-md">
+                <div class="form-floating">
+                  <select class="form-select" id="owner">
+                    <option selected>SELECCIONAR</option>
+                    <option value="1">OSCAR SANTACRUZ​</option>
+                    <option value="2">ANDRES AMAYA</option>
+                    <option value="4">PAOLA RUSSI</option>
+                    <option value="5">MIREHYLLI UZCATEGUI</option>
+                    <option value="6">JUAN CARLOS ORJUELA</option>
+                    <option value="7">JUAN CAMILO ALVAREZ</option>
+                    <option value="8">JAVIER PAJARITO</option>
+                    <option value="9">JORGE BARRAGAN</option>
+                    <option value="10">NATALY AGUALIMPIA DELGADO</option>
+                  </select>
+                  <label for="owner">OWNER</label>
+                </div>
+              </div>
+              <div class="col-md">
+                <button type="button" class="btn btn-primary btn-lg mt-2" data-bs-toggle="modal" data-bs-target="#proyectoModal">
+                  Proyecto
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="proyectoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <project-modal></project-modal>
+                </div>
+              </div>
+            </div>
+
+            <div class="row g-9 mb-3">
+              <div class="col-md">
+                <div class="form-floating">
+                  <select class="form-select" id="pais">
+                    <option selected>SELECCIONAR</option>
+                    <option value="1">MÉXICO</option>
+                    <option value="2">PANAMÁ</option>
+                    <option value="3">COLOMBIA</option>
+                    <option value="4">PERÚ</option>
+                    <option value="5">CHILE</option>
+                  </select>
+                  <label for="pais">PAÍS</label>
+                </div>
+              </div>
+              <div class="col-md">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="clienteNegocio" placeholder="Cliente de Negocio">
+                  <label for="clienteNegocio">CLIENTE NEGOCIO</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row g-9 mb-3">
+              <div class="col-md">
+                <div class="form-floating">
+                  <select class="form-select" id="cliente">
+                    <option selected>SELECCIONAR</option>
+                    <option value="1">NATURGY</option>
+                    <option value="2">SMARTIMATIC​</option>
+                    <option value="3">ACCENTURE​</option>
+                    <option value="4">CANAL PANAMA​</option>
+                    <option value="5">BANREGIO​</option>
+                    <option value="6">FERREYROS</option>
+                    <option value="7">GREENBRIER​</option>
+                    <option value="8">ALSEA​</option>
+                    <option value="9">COCA-COLA</option>
+                    <option value="10">IBM​</option>
+                    <option value="11">MAAJI SWIMWEAR​</option>
+                    <option value="12">PAYU​</option>
+                    <option value="13">NUTRESSA​</option>
+                    <option value="14">HOLCIM</option>
+                    <option value="15">TAVANT</option>
+                    <option value="16">ASTRAZENECA</option>
+                    <option value="17">LA POSITIVA​</option>
+                    <option value="18">NUKKE</option>
+                    <option value="19">INTERGRUPO​</option>
+                    <option value="20">LOS PORTALES​</option>
+                    <option value="21">SANTANDER​​</option>
+                    <option value="22">HOCOL​​</option>
+                    <option value="23">WIPRO</option>
+                    <option value="24">NOVO NORDISK PERÚ S.A.C. ​​</option>
+                    <option value="25">MVM INGENIERIA​​</option>
+                    <option value="26">NOVAVENTA​</option>
+                    <option value="27">CENIT​</option>
+                    <option value="28">TERPEL​​</option>
+                    <option value="29">ECOPETROL ​</option>
+                    <option value="30">ALIANZA FIDUCIARIA S.A.​​</option>
+                    <option value="31">BRENNTAG CHILE​</option>
+                    <option value="32">CASA EDITORIAL EL TIEMPO S.A​.</option>
+                    <option value="33">COCHA CHILE​</option>
+                    <option value="34">CORFICOLOMBIANA​​</option>
+                    <option value="35">CRUZ VERDE​​</option>
+                    <option value="36">FUNDACIÓN DE LA MUJER​</option>
+                    <option value="37">DELOITTE​​</option>
+                    <option value="38">SERVIENTREGA​​</option>
+                    <option value="39">WILLIS TOWERS WATSON​</option>
+                    <option value="40">LIBERTY SEGUROS S.A​</option>
+                    <option value="41">A TODA HORA S.A. ​​</option>
+                    <option value="42">ADL DIGITAL LAB S.A.S. ​​</option>
+                    <option value="43">ALICORP​​</option>
+                    <option value="44">BBVA​</option>
+                    <option value="45">FALABELLA​</option>
+                    <option value="46">MI BANCO​</option>
+                    <option value="47">DXC</option>
+                    <option value="48">HITACHI​​​</option>
+                    <option value="49">ABB LTDA ​​</option>
+                    <option value="50">BANCOLOMBIA​</option>
+                    <option value="51">HP INC. PERU S.R.L​​</option>
+                    <option value="52">WALMART</option>
+                  </select>
+                  <label for="cliente">CLIENTE</label>
+                </div>
+              </div>
+              <div class="col-md">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="clienteFeedback" placeholder="Cliente de Feedback">
+                  <label for="clienteFeedback">CIENTE FEEDBACK</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row g-9 mb-3">
+              <div class="col-md">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+                  <label for="nombre">NOMBRE</label>
+                </div>
+              </div>
+              <div class="col-md">
+                  <input type="file" class="form-control form-control-lg"
+                          formControlName="certificaciones" placeholder="Certificaciones">
+                </div>
+              </div>
+
+            <div class="row g-9 mb-3">
+              <div class="col-md">
+                <div class="form-floating">
+                  <select class="form-select" id="cargo">
+                    <option selected>SELECCIONAR</option>
+                    <option value="1">DESARROLLADOR FRONT END</option>
+                    <option value="2">DESARROLLADOR BACK END</option>
+                    <option value="3">DESARROLLADOR FULL STACK</option>
+                    <option value="4">ADMINISTRADOR DE BASE DE DATOS</option>
+                    <option value="5">DEVOPS</option>
+                    <option value="6">QA</option>
+                    <option value="7">PRODUCT OWNER</option>
+                    <option value="8">SCRUM MASTER</option>
+                  </select>
+                  <label for="cargo">CARGO</label>
+                </div>
+              </div>
+              <div class="col-md">
+                <div class="form-floating">
+                  <textarea class="form-control" placeholder="Escribe un Comentario" id="comentario"></textarea>
+                  <label for="comentario">COMENTARIO</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row g-9 mb-3">
+              <div class="col-6">
+                <input type="file" class="form-control form-control-lg"
+                        formControlName="certificaciones" placeholder="Certificaciones">
+              </div>
+            </div>
+
+            <div class="row g-9 mb-3">
+              <div class="col-6">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="herramientas" placeholder="Herramientas Tecnologicas">
+                  <label for="herramientas">HERRAMIENTAS TECNOLOGICAS</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-3">
+              <button type="text" class="btn btn-secondary mr-2" routerLink="/list-empleados">Volver</button>
+              <button type="submit" class="btn btn-success">Agregar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
